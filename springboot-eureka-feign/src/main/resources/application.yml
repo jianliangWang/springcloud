@@ -1,0 +1,19 @@
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.2.6:9090/eureka
+spring:
+  application:
+    name: springboot-eureka-feign
+logging:
+  level:
+    com.springboot.feign.MyFeign: debug
+feign:
+  circuitbreaker:
+    enabled: true

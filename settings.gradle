@@ -1,0 +1,6 @@
+rootProject.name = 'springboot'
+include 'springboot-eureka-client'
+include 'springboot-eureka-server'
+include 'springboot-eureka-client-ribbon'
+include 'springboot-eureka-feign'
+

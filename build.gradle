@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.springboot'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    maven {
+        url 'https://repo.spring.io/release/'
+    }
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', '2021.0.0')
+}
+
+
+
+subprojects{
+
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java'
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+    dependencies {
+        implementation (
+                'org.springframework.boot:spring-boot-starter-web',
+                'org.springframework.boot:spring-boot-starter-undertow'
+        )
+        configurations {
+            all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+        }
+    }
+}

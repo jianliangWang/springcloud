@@ -1,0 +1,10 @@
+repositories {
+    maven {
+        url 'https://repo.spring.io/release/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+}

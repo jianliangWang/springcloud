@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: springboot-eureka-client-ribbon
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:9090/eureka
+    url: http://spring-eureka-client/getInfo
