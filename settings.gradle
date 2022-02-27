@@ -3,4 +3,6 @@ include 'springboot-eureka-client'
 include 'springboot-eureka-server'
 include 'springboot-eureka-client-ribbon'
 include 'springboot-eureka-feign'
+include 'springboot-config-server'
+include 'springboot-config-client'
 

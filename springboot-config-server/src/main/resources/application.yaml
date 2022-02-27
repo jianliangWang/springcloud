@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jianliangWang/springcloudconfig.git
+          skipSslValidation: true
+        encrypt:
+          enabled: true
+
+  application:
+    name: springboot-config-server
+
+  security:
+    user:
+      name: user
+      password: 123123
+server:
+  port: 8080
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.2.6:9090/eureka
+encrypt:
+  key-store:
+    location: classpath:encrypt-info.keystore
+    alias: config-info
+    password: 123123
+    secret: 123123

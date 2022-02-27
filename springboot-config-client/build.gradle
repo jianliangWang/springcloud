@@ -1,0 +1,12 @@
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation (
+            'org.springframework.cloud:spring-cloud-starter-config',
+            'org.springframework.boot:spring-boot-starter-actuator',
+            'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    )
+}
